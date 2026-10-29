@@ -1,25 +1,36 @@
-[Meta]
-DisplayName=Everlast: Undying Tale
-Author=Community (official install.ps1 + GitHub)
-Description=Unofficial AMP template for Everlast dedicated server (Steam AppID 4268160). Uses official start/stop commands.
-URL=https://github.com/In-Spades/everlast-dedicated-server
-OS=Windows
-AppSettings={"World":"Dedicated"}
+Meta.DisplayName=Everlast: Undying Tale
+Meta.Description=Unofficial AMP template for Everlast dedicated server (Steam AppID 4268160)
+Meta.OS=Windows
+Meta.Arch=x86_64
+Meta.Author=NOTSIEBS
+Meta.URL=https://github.com/In-Spades/everlast-dedicated-server
+Meta.DisplayImageSource=
+Meta.ConfigManifest=everlastconfig.json
+Meta.MetaConfigManifest=everlastmetaconfig.json
+Meta.ConfigRoot=everlast.kvp
+Meta.MinAMPVersion=2.5.0.0
+Meta.DockerRequired=False
+Meta.ConfigVersion=1
+Meta.AppConfigId=e7f3a2b1-9c4d-4e8f-a1b2-3c5d6e7f8a9b
+Meta.AppIsMultiIPAware=False
 
-[Application]
-RootDir=./everlast
-WorkingDir=./everlast/server
-ExecutableWin=Raptor.Game.exe
-CommandLineArgs=--environment standalone --LaunchConfig:DataRoot={{$FullBaseDir}}data --LaunchConfig:WorldName={{World}} --LaunchConfig:SinglePlayerMode=false {{CustomArgs}}
-HasWriteableConsole=False
-HasReadableConsole=True
-ExitMethod=Kill
-ApplicationPort1=9003
-MaxUsers=100
-SteamUpdateAnonymousLogin=True
-RapidStartup=False
-MonitorChildProcessName=^Raptor\.Game\.exe$
+App.DisplayName=Everlast: Undying Tale
+App.RootDir=./everlast/
+App.BaseDirectory=./everlast/server/
+App.ExecutableWin=Raptor.Game.exe
+App.WorkingDir=server
+App.CommandLineArgs=--environment standalone --LaunchConfig:DataRoot={{$FullBaseDir}}data --LaunchConfig:WorldName={{World}} --LaunchConfig:SinglePlayerMode=false {{CustomArgs}}
+App.HasWriteableConsole=False
+App.HasReadableConsole=True
+App.ExitMethod=Kill
+App.ApplicationIPBinding=0.0.0.0
+App.Ports=@IncludeJson[everlastports.json]
+App.PrimaryApplicationPortRef=ServerPort
+App.MaxUsers=100
+App.UpdateSources=@IncludeJson[everlastupdates.json]
+App.SteamUpdateAnonymousLogin=True
+App.RapidStartup=False
+App.MonitorChildProcessName=^Raptor\.Game\.exe$
+App.ApplicationReadyMode=RegexMatch
 
-[Console]
-ApplicationReadyMode=Regex
-ApplicationReadyRegex=SERVER_READY
+Console.AppReadyRegex=SERVER_READY
