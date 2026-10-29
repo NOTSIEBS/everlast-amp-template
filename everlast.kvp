@@ -30,11 +30,11 @@ Meta.AppIsMultiIPAware=False
 
 App.DisplayName=Everlast: Undying Tale
 App.RootDir=./everlast/
-App.BaseDirectory=./everlast/
+App.BaseDirectory=./everlast/server/
 App.SteamWorkshopDownloadLocation=
-App.ExecutableWin=server\server\Raptor.Game.exe
+App.ExecutableWin=server\Raptor.Game.exe
 App.ExecutableLinux=
-App.WorkingDir=server\server
+App.WorkingDir=server
 App.LinuxCommandLineArgs=
 App.WindowsCommandLineArgs=
 App.CommandLineArgs=--environment standalone --LaunchConfig:DataRoot={{$FullBaseDir}}data --LaunchConfig:WorldName={{World}} --LaunchConfig:SinglePlayerMode=false {{CustomArgs}}
