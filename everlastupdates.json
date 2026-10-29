@@ -5,7 +5,7 @@
         "UpdateSource": "SteamCMD",
         "UpdateSourceData": "4268160",
         "UpdateSourceArgs": "4268160",
-        "UpdateSourceTarget": "{{$FullBaseDir}}server",
+        "UpdateSourceTarget": "{{$FullBaseDir}}",
         "UpdateSourceVersion": "public",
         "SkipOnFailure": false
     },
