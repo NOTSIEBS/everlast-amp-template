@@ -1,0 +1,33 @@
+[
+    {
+        "UpdateStageName": "Everlast Download (Steam)",
+        "UpdateSourcePlatform": "Windows",
+        "UpdateSource": "SteamCMD",
+        "UpdateSourceData": "4268160",
+        "UpdateSourceArgs": "4268160",
+        "UpdateSourceTarget": "{{$FullBaseDir}}server",
+        "UpdateSourceVersion": "public",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create Data Root",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}data",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create Worlds Directory",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}data/Worlds",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Create World Directory",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}data/Worlds/{{World}}",
+        "SkipOnFailure": false
+    }
+]

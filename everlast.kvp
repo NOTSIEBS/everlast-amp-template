@@ -1,0 +1,25 @@
+[Meta]
+DisplayName=Everlast: Undying Tale
+Author=Community (official install.ps1 + GitHub)
+Description=Unofficial AMP template for Everlast dedicated server (Steam AppID 4268160). Uses official start/stop commands.
+URL=https://github.com/In-Spades/everlast-dedicated-server
+OS=Windows
+AppSettings={"World":"Dedicated"}
+
+[Application]
+RootDir=./everlast
+WorkingDir=./everlast/server
+ExecutableWin=Raptor.Game.exe
+CommandLineArgs=--environment standalone --LaunchConfig:DataRoot={{$FullBaseDir}}data --LaunchConfig:WorldName={{World}} --LaunchConfig:SinglePlayerMode=false {{CustomArgs}}
+HasWriteableConsole=False
+HasReadableConsole=True
+ExitMethod=Kill
+ApplicationPort1=9003
+MaxUsers=100
+SteamUpdateAnonymousLogin=True
+RapidStartup=False
+MonitorChildProcessName=^Raptor\.Game\.exe$
+
+[Console]
+ApplicationReadyMode=Regex
+ApplicationReadyRegex=SERVER_READY

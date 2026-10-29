@@ -1,0 +1,16 @@
+[
+    {
+        "Protocol": "UDP",
+        "Port": 9003,
+        "Ref": "ServerPort",
+        "Name": "Game Port",
+        "Description": "Main game traffic (default 9003). Query port is normally 27016 + (GamePort % 5)."
+    },
+    {
+        "Protocol": "UDP",
+        "Port": 27019,
+        "Ref": "QueryPort",
+        "Name": "Query Port (example)",
+        "Description": "Example derived query port for default game port 9003. Set NetworkConfig.QueryPort in appsettings.json if you need a fixed value."
+    }
+]
